@@ -1,0 +1,6 @@
+yourName = input("What is your name? ")
+print("Hello " + yourName + "!")
+yourMusic = input("What is your favorite music? ")
+print(yourMusic + " is a great choice!")
+yourLocation = input("Where do you live? ")
+print("I've heard " + yourLocation + " is a great place to live!")
