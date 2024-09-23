@@ -1,0 +1,9 @@
+
+#challenge
+yourLike = input(str("Who do you like? "))
+print(yourLike)
+yourHate = input(str("Who do you hate? "))
+print(yourHate)
+yourFamily = input(str("What is the name of your family? "))
+print(yourFamily)
+print("Once upon a time, there was a person named " + yourLike + " who really liked " + yourLike + " but hated " + yourHate)
