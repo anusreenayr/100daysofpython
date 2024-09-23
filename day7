@@ -1,0 +1,22 @@
+#nesting
+  show = input("Which show do you watch? ")
+
+if show == "Friends":
+    print("So basic! but amazing")
+    character = input("Who is your favorite character? ")
+    if character == "Chandler":
+        print("Oh yay! I love him")
+    else:
+        print("Oh no, Chandler is the best")
+
+elif show == "Shameless US":
+    print("Oh yes! I love it")
+    character = input("Who is your favorite character? ")
+    if character == "Fiona":
+        print("Oh yay! I love her")
+    else:
+        print("Oh no, Fiona is the best")
+
+else:
+    print("I haven't watched that show yet!")
+
