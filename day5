@@ -1,0 +1,12 @@
+#if and else
+pens = input("Do you prefer pens or pencils? ")
+if pens == "pens":
+  print("same!")
+else:
+  print("they are cool too!")
+
+animals = input("Do you prefer monkeys or donkeys? ")
+if animals == "monekys":
+  print("Oh my god")
+else:
+  print("wow")
