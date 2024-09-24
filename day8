@@ -1,0 +1,11 @@
+#input and output, concatenation, if statements, nested if statements
+
+yourName = input("What is your name? ")
+print("Hello" + " " + yourName)
+dayOfweek = input("What day of the week is it? ")
+print("It's" + " " + dayOfweek)
+favouriteFood = input("What is your favourite food? ")
+if favouriteFood == "pizza":
+   print("I like" + " "+ favouriteFood + " " + "too")
+else:
+  print("ew go away")
