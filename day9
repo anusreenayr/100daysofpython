@@ -1,0 +1,8 @@
+#casting
+gen = int(input("Which generation are you a part of? "))
+if gen >= 1925:
+  print("Oh, you're old")
+elif gen >= 1996:
+  print("Too young")
+else:
+ print("You're not in any generation")
