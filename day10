@@ -1,0 +1,11 @@
+#arithmetic operations
+totalBill = float(input("What was the total bill amount? "))
+
+tipPercentage = float(input("What percentage tip would you like to add? (e.g., 15 for 15%): "))
+
+tipAmount = (tipPercentage / 100) * totalBill
+
+totalBillWithTip = totalBill + tipAmount
+numberOfPeople = int(input("How many people are splitting the bill? "))
+amountPerPerson = totalBillWithTip / numberOfPeople
+print("You all owe", amountPerPerson)
