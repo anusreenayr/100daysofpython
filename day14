@@ -1,0 +1,21 @@
+#developing a 2 player rock paper scissors game using python
+
+  from getpass import getpass as input
+print("The Epic ROCK PAPER SCISSORS BATTLE!!!")
+print() 
+player1 = input("Player 1, make your choice: ")
+player2 = input("Player 2, make your choice: ")
+valid_choices = ['R', 'P', 'S']
+if player1 not in valid_choices or player2 not in valid_choices:
+  print("Invalid input! Please use R for Rock, P for Paper, or S for Scissors.")
+
+elif player1 == player2:
+  print("It's a tie! 🤝")
+elif (player1 == 'R' and player2 == 'S') or \
+   (player1 == 'S' and player2 == 'P') or \
+   (player1 == 'P' and player2 == 'R'):
+  print("Player 1 wins! 🏆")
+else:
+  print("Player 2 wins! 🏆")
+
+
