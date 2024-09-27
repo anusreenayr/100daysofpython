@@ -1,0 +1,21 @@
+#grade generator using python 
+  
+testName = input(str("What test are you taking?"))
+maxScore = int(input("What is the maximum score you can get?"))
+yourScore = int(input("What score did you get?"))
+percentage = yourScore / maxScore * 100
+totalScore = round(percentage, 2)
+if totalScore >= 90:
+  print("You got an A+")
+elif totalScore >= 80:
+  print("You got an A")
+elif totalScore >= 70:
+  print("You got a B")
+elif totalScore >= 60:
+  print("You got a C")
+elif totalScore >= 50:
+  print("You got a D")
+elif totalScore >= 40:
+  print("You got a U")
+else:
+  print("You failed")
