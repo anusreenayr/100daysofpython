@@ -1,0 +1,19 @@
+#loops
+
+
+exit = " "
+while exit != 'yes':
+    ans = input("Which animal do you want? : ")
+
+    if ans == 'Cow':
+        print("A Cow goes Moooo..!!")
+    elif ans == 'A Lesser Spotted lemur':
+        print("Ummm...the Lesser Spotted Lemur goes Awooga..!!")
+    else:
+        print(f"A {ans} goes Awooga ?")
+
+    print("")
+
+    exit = input("Do you want to exit? (yes to exit): ")
+    print("")
+
