@@ -1,0 +1,15 @@
+#guessing game
+
+import random
+
+number = random.randint(0, 1000000)
+
+print("Guess the number between 0 and 1,000,000")
+
+guess = int(input())  
+if guess > 500000:
+      print("Too high")
+elif guess < 50000:
+      print("Too low")
+else:
+      print("Correct!")
