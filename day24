@@ -1,0 +1,18 @@
+import random
+
+def dice():
+    print("Infinity Dice🎲")
+    print()
+    sides = int(input("How many sides?: "))
+    print()
+    
+    while True:
+        roll = random.randint(1, sides)
+        print("You rolled", roll)
+        print()
+        
+        again = input("Roll again? (yes/no): ").lower()
+        print()
+        
+        if again != "yes":
+            break
