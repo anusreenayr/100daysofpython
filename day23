@@ -1,0 +1,20 @@
+#Create a subroutine with both a username and password.
+#Create a loop to prompt the user again and again until they put in the correct login information.
+
+  # code
+  def usernameAndPassword():
+  print("Replit Login System")
+  print()
+
+  while True: 
+    print("What is your username")
+    username = input("Username: ")
+    print("What is your password")
+    password = input("Password: ")
+
+    if username == "david" and password == "baldies4life":
+      print("Welcome to Replit!")
+      break  
+    else:
+      print("Whoops! I don't recognize that username or password. Try again!")
+usernameAndPassword()
