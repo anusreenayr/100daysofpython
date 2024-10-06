@@ -2,3 +2,36 @@
 
   # code
   
+import random
+
+print("=== ⚔ Character Stats Generator ⚔ ===")
+print()
+
+def rollDice(sides):
+  dice = random.randint(1, sides)
+  print("You have rolled a", dice)
+  print()
+  return dice
+
+def healthPoints():
+  diceOne = rollDice(6)
+  diceTwo = rollDice(8)
+  health = diceOne * diceTwo
+  if health < 25:
+    print()
+  return health
+
+
+while True:
+  charName = input("What is your Characters Name?: ")
+  print()
+  health = healthPoints()
+  print(charName, "your health is:", health)
+  print()
+  restart = input("Would you like to create stats for another character?: ")
+  print()
+  if restart == "No":
+    print("Thank you for creating your Character Stats!")
+    break
+  else:
+    continue
