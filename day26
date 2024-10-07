@@ -1,0 +1,51 @@
+# Play a song from this repl and build a menu to go with it. Make it look like an iPod!
+
+import os
+import time
+import pygame
+
+# Initialize Pygame and the mixer for sound playback
+pygame.init()
+pygame.mixer.init()
+
+# Load the audio file
+sound = pygame.mixer.Sound('audio.wav')
+
+# Function to clear the screen depending on the operating system
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+# Function to display the menu
+def display_menu():
+    print("🎵 MyPOD Music Player")
+    print("Press 1 to Play")
+    print("Press 2 to Exit")
+    print("Press anything else to see the menu again.")
+
+# Subroutine to handle playing the song
+def play():
+    clear_screen()
+    print("🎶 Playing the song... Press Enter to go back to the menu.")
+    pygame.mixer.unpause()  # Unpause (or start) the audio
+    input()  # Wait for user to press Enter
+    pygame.mixer.pause()  # Pause the audio when returning to the menu
+
+# Main loop for the program
+while True:
+    clear_screen()  # Clear the screen to display a fresh menu
+    display_menu()  # Show the menu options
+
+    # Get user input
+    choice = input("Select an option: ")
+
+    if choice == '1':  # User selects to play the song
+        play()  # Call the play subroutine
+    elif choice == '2':  # User selects to exit the program
+        print("Exiting the player. Goodbye!")
+        time.sleep(1)  # Pause for a moment before closing
+        break  # Exit the while loop to close the program
+    else:
+        # Invalid option, return to the menu
+        clear_screen()
+        print("Invalid option! Returning to the menu...")
+        time.sleep(1)
