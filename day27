@@ -1,0 +1,53 @@
+# You will create a video game that creates a character's health and attack stats...along with an epic name for your character.
+
+# code
+  import random
+import os
+import time
+
+print("=== Character Builder ===")
+print()
+time.sleep(2)
+os.system("clear")
+
+def rollDice(sides):
+  dice = random.randint(1, sides)
+  return dice
+
+def strengthPoints():
+  strength = rollDice(6)*rollDice(8)+12/2
+  return strength
+
+def healthPoints():
+  health = rollDice(6)*rollDice(12)+10/2
+  return health
+
+while True:
+  legendName = input("Name your Legend!: ")
+  print()
+  time.sleep(1)
+  print(legendName, "... Excellent Choice! It already has a great ring to it!")
+  print()
+  time.sleep(1)
+  charType = input("Now, please select your Character Type, choosing from Human, Wizard, Orc or Elf!: ")
+  print()
+  time.sleep(1)
+  print(legendName, "... you chose the Character Type ===", charType, "=== This is going to be EPIC!")
+  print()
+  time.sleep(1)
+  print(legendName)
+  time.sleep(0.5)
+  print("Health:", healthPoints())
+  time.sleep(0.5)
+  print("Strength", strengthPoints())
+  print()
+  time.sleep(1)
+  print(legendName, "... May your name and the stories of your heroism, live on in the hearts and minds of everyone who learns your name!")
+  print()
+  time.sleep(1)
+  newChar = input("Would you like to choose another Legend Name and Character?: ")
+  if newChar == "Yes" or newChar == "yes":
+    print()
+    continue
+  else:
+    break
