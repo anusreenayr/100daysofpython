@@ -1,0 +1,124 @@
+# to build an automated game battle system
+
+
+
+
+import random
+import os
+import time
+
+print("=== ⚔ BATTLE TIME ⚔ ===")
+print()
+time.sleep(1)
+
+def rollDie(sides):
+  result = random.randint(1, sides)
+  return result
+
+def rollDie1():
+  die1 = rollDie(6)
+  die2 = rollDie(6)
+  die3 = rollDie(6)
+  return die1 * die2 * die3
+
+print("Let the battle commence!")
+print()
+time.sleep(1)
+legendName1 = input("Name your Legend!: ")
+time.sleep(1)
+print(legendName1, "... Excellent Choice! It already has a great ring to it!")
+print()
+time.sleep(1)
+char1Type = input("What is your character type?: ")
+print()
+time.sleep(1)
+print(legendName1, "... you chose the Character Type ===", char1Type, "=== This is going to be EPIC!")
+print()
+time.sleep(1)
+char1Health = rollDie1()
+char1Strength = rollDie1()
+print(f"{legendName1} is a {char1Type} with {char1Health} health and {char1Strength} strength")
+print()
+time.sleep(1)
+
+legendName2 = input("Name your Legend!: ")
+print(legendName2, "... Excellent Choice! It already has a great ring to it!")
+print()
+time.sleep(1)
+char2Type = input("What is your character type?: ")
+print()
+time.sleep(1)
+print(legendName2, "... you chose the Character Type ===", char2Type, "=== This is going to be EPIC!")
+print()
+time.sleep(1)
+char2Health = rollDie1()
+char2Strength = rollDie1()
+print(f"{legendName2} is a {char2Type} with {char2Health} health and {char2Strength} strength")
+print()
+time.sleep(1)
+
+round = 1
+winner = None
+
+while True:
+  time.sleep(1)
+  os.system("clear")
+  print("Fight to the death!")
+  print()
+  time.sleep(1)
+  print("The battle begins!")
+  print()
+  time.sleep(1)
+  char1Dice = rollDie1()
+  char2Dice = rollDie1()
+  difference = abs(char1Strength - char2Strength) + 1
+  if char1Dice > char2Dice:
+    char2Health -= difference
+    if round==1:
+      print(legendName1, "has dealt the first blow")
+      print()
+      time.sleep(1)
+    else:
+      print(legendName1, "wins the round", round)
+      time.sleep(1)
+  elif char2Dice > char1Dice:
+    char1Health -= difference
+    if round==1:
+      print(legendName2, "has dealt the first blow")
+      time.sleep(1)
+    else:
+      print(legendName2, "wins the round", round)
+      time.sleep(1)
+  else:
+    print("Their swords clatter with an almighty bang and they draw the round", round)
+    time.sleep(1)
+  print()
+  print(legendName1)
+  print("Your health is:", char1Health)
+  time.sleep(1)
+  print()
+  print(legendName2)
+  print("Your health is:", char2Health)
+  time.sleep(1)
+  print()
+  if char1Health<=0:
+    print(legendName1, "has died!")
+    time.sleep(1)
+    winner = legendName2
+    break
+  elif char2Health<=0:
+    print(legendName2, "has died!")
+    time.sleep(1)
+    winner = legendName1
+    break
+  else:
+    print("They're both battered and bruised but are still standing for the next round!")
+    time.sleep(1)
+    round += 1
+
+time.sleep(1)
+os.system("clear")
+print("A Legend Has Been Made!")
+time.sleep(1)
+print()
+print(winner, "has won the battle in", round, "rounds! Congratulations on your epic win!")
