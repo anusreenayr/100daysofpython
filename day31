@@ -1,0 +1,41 @@
+# recreating two interfaces using alignment, f-strings, and colours
+  # code 
+  YELLOW = "\033[93m"   
+GREEN = "\033[92m"    
+PINK = "\033[95m"     
+WHITE = "\033[0m"   
+BLUE = "\033[94m"
+RED = "\033[91m"
+
+myText = f"{YELLOW}Music App{WHITE}"
+print(f"{myText:^35}")
+print()
+print(f"{WHITE}🔥▶️\tRadio Gaga{WHITE}")
+print(f"\t{YELLOW}Queen{WHITE}")
+print()
+print("PREV")
+print(f"\t{GREEN}NEXT{WHITE}")
+print(f"\t\t{PINK}PAUSE{WHITE}")
+print()
+print()
+print()
+yourText = f"{WHITE}WELCOME TO"
+print(f"{yourText:^35}")
+yourText = f"{BLUE}--  ARMBOOK  --{WHITE}"
+print(f"{yourText:^35}")
+print()
+yourText = f"{YELLOW}Definitely not a rip off of"
+print(f"{yourText:>35}")
+yourText = f"{YELLOW}a certain other social"
+print(f"{yourText:>35}")
+yourText = f"{YELLOW}networking site."
+print(f"{yourText:>35}")
+print()
+yourText = f"{RED}Honest."
+print(f"{yourText:^35}")
+print()
+yourText = f"{WHITE}Username:"
+print(f"{yourText:^35}")
+yourText = f"{WHITE}Password:"
+print(f"{yourText:^35}")
+print()
