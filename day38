@@ -1,0 +1,7 @@
+# using lists
+
+import random
+
+greetingList = ["Hello", "Namaskaram", "Vanakkam", "Hola", "Konnichiwa"]
+random_index = random.randint(0, len(greetingList) - 1)
+print(greetingList[random_index])
