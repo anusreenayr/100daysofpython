@@ -1,0 +1,57 @@
+# to-do list
+
+
+
+import os
+import time
+
+# Define the to-do list
+myAgenda = []
+
+# Subroutine to print the list in a nice way
+def printList():
+    os.system('cls' if os.name == 'nt' else 'clear')  # Clear the screen
+    print("📝 To-Do List Manager 📝\n")
+    if myAgenda:
+        for i, item in enumerate(myAgenda, 1):
+            print(f"{i}. {item}")
+    else:
+        print("Your to-do list is currently empty!")
+    print()
+
+# Subroutine to add an item to the list
+def addItem():
+    item = input("🟢 What's next on the Agenda?: ")
+    myAgenda.append(item)
+    print(f"✅ '{item}' added to your agenda.")
+    time.sleep(1)
+
+# Subroutine to remove an item from the list
+def removeItem():
+    item = input("🔴 Which item did you complete (exact name)?: ")
+    if item in myAgenda:
+        myAgenda.remove(item)
+        print(f"✅ '{item}' removed from your agenda.")
+    else:
+        print(f"⚠️ '{item}' was not in the list.")
+    time.sleep(1)
+
+# Main program loop
+while True:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("📝 To-Do List Manager 📝")
+    action = input("Would you like to view, add, or edit (remove) an item? (type 'quit' to exit): ").strip().lower()
+
+    if action == "view":
+        printList()
+        input("Press Enter to continue...")  # Pause to view the list
+    elif action == "add":
+        addItem()
+    elif action == "edit" or action == "remove":
+        removeItem()
+    elif action == "quit":
+        print("Goodbye! Have a productive day! 👋")
+        break
+    else:
+        print("⚠️ Invalid choice. Please choose 'view', 'add', 'edit', or 'quit'.")
+        time.sleep(1)
