@@ -1,57 +1,42 @@
-# to-do list
 
+import os, time
+listOfEmail = []
 
+def prettyPrint():
+  os.system("clear")
+  print("listOfEmail")
+  print()
+  counter = 1
+  for email in listOfEmail:
+    print(f"{counter}: {email}")
+    counter+=1
+  time.sleep(1)
 
-import os
-import time
+def spam(max):
+  for i in range(0,max):
+    print(f"""Email {i+1}
 
-# Define the to-do list
-myAgenda = []
+Dear {listOfEmail[i]}
+It has come to our attention that you're missing out on the amazing Replit 100 days of code. We insist you do it right away. If you don't we will pass on your email address to every spammer we've ever encountered and also sign you up to the My Little Pony newsletter, because that's neat. We might just do that anyway.
 
-# Subroutine to print the list in a nice way
-def printList():
-    os.system('cls' if os.name == 'nt' else 'clear')  # Clear the screen
-    print("📝 To-Do List Manager 📝\n")
-    if myAgenda:
-        for i, item in enumerate(myAgenda, 1):
-            print(f"{i}. {item}")
-    else:
-        print("Your to-do list is currently empty!")
-    print()
+Love and hugs,
 
-# Subroutine to add an item to the list
-def addItem():
-    item = input("🟢 What's next on the Agenda?: ")
-    myAgenda.append(item)
-    print(f"✅ '{item}' added to your agenda.")
+Ian Spammington III""")
     time.sleep(1)
-
-# Subroutine to remove an item from the list
-def removeItem():
-    item = input("🔴 Which item did you complete (exact name)?: ")
-    if item in myAgenda:
-        myAgenda.remove(item)
-        print(f"✅ '{item}' removed from your agenda.")
-    else:
-        print(f"⚠️ '{item}' was not in the list.")
-    time.sleep(1)
-
-# Main program loop
+    os.system("clear")
 while True:
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print("📝 To-Do List Manager 📝")
-    action = input("Would you like to view, add, or edit (remove) an item? (type 'quit' to exit): ").strip().lower()
-
-    if action == "view":
-        printList()
-        input("Press Enter to continue...")  # Pause to view the list
-    elif action == "add":
-        addItem()
-    elif action == "edit" or action == "remove":
-        removeItem()
-    elif action == "quit":
-        print("Goodbye! Have a productive day! 👋")
-        break
-    else:
-        print("⚠️ Invalid choice. Please choose 'view', 'add', 'edit', or 'quit'.")
-        time.sleep(1)
+  print("SPAMMER Inc.")
+  menu = input("1: Add email\n2: Remove email\n3: Show emails\n4: Get SPAMMING\n> ")
+  if menu == "1":
+    email = input("Email > ")
+    listOfEmail.append(email)
+  elif menu== "2":
+    email = input("Email > ")
+    if email in listOfEmail:
+      listOfEmail.remove(email)
+  elif menu == "3":
+    prettyPrint()
+  elif menu =="4":
+    spam(10)
+  time.sleep(1)
+  os.system("clear")
