@@ -1,0 +1,29 @@
+# Initialize an empty list to store names
+names_list = []
+
+# Define a subroutine to add a name to the list, ensuring no duplicates
+def add_name(first_name, last_name):
+    # Strip extra spaces and capitalize the first letter of each name
+    first_name = first_name.strip().capitalize()
+    last_name = last_name.strip().capitalize()
+
+    # Combine first and last names using an f-string
+    full_name = f"{first_name} {last_name}"
+
+    # Check for duplicates before adding
+    if full_name not in names_list:
+        names_list.append(full_name)  # Add to the list if it's unique
+        print("Updated names list:", names_list)  # Print the current list
+    else:
+        print(f"{full_name} is already in the list.")
+
+# Start a loop to continuously prompt for user input
+while True:
+    # Ask for first and last name
+    first_name_input = input("Enter the first name (or type 'quit' to exit): ")
+    if first_name_input.lower() == 'quit':
+        break
+    last_name_input = input("Enter the last name: ")
+
+    # Call the subroutine to add the name to the list
+    add_name(first_name_input, last_name_input)
