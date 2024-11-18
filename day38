@@ -1,0 +1,18 @@
+# 🌟 Star Wars Name Generator 🌟
+
+# Step 1: Ask the user for their first and last names
+first_name = input("Enter your first name: ")
+last_name = input("Enter your last name: ")
+
+# Step 2: Generate the Star Wars first name
+star_wars_first_name = (first_name[:3] + last_name[:3]).title()
+
+# Step 3: Ask for the mother's maiden name and city of birth
+maiden_name = input("Enter your mother's maiden name: ")
+city = input("Enter the city where you were born: ")
+
+# Step 4: Generate the Star Wars last name
+star_wars_last_name = (maiden_name[:2] + city[-3:]).title()
+
+# Step 5: Print the final Star Wars name
+print(f"Your Star Wars name is {star_wars_first_name} {star_wars_last_name}")
