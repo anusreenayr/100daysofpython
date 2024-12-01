@@ -1,0 +1,45 @@
+COLORS = {
+    'default': "\033[0m",
+    'red': "\033[31m",
+    'blue': "\033[34m",
+    'green': "\033[32m",
+    'purple': "\033[35m",
+    'yellow': "\033[33m"
+}
+
+# Function to set the text color
+def set_color(color):
+    print(COLORS[color], end="")
+
+# Function to reset color to default
+def reset_color():
+    set_color('default')
+
+# Main function to rainbow-ize the string
+def rainbowize(text):
+    current_color = 'default'  # Start with the default color
+    for char in text:
+        if char.lower() in 'rgbpy':  # Check for color-changing characters
+            if char.lower() == 'r':
+                current_color = 'red'
+            elif char.lower() == 'g':
+                current_color = 'green'
+            elif char.lower() == 'b':
+                current_color = 'blue'
+            elif char.lower() == 'p':
+                current_color = 'purple'
+            elif char.lower() == 'y':
+                current_color = 'yellow'
+            set_color(current_color)  # Change color
+
+        elif char == ' ':  # Reset color for spaces
+            reset_color()
+
+        print(char, end="")  # Print the character in the current color
+
+    reset_color()  # Reset to default at the end
+    print()  # Move to the next line
+
+# Ask the user for input
+sentence = input("Enter a sentence to rainbow-ize: ")
+rainbowize(sentence)
